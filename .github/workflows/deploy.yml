@@ -24,16 +24,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Work out the site's base path
-        run: |
-          REPO="${GITHUB_REPOSITORY#*/}"
-          if [ -f src/static/CNAME ] || [ "$REPO" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
-            echo "PATH_PREFIX=/" >> "$GITHUB_ENV"
-          else
-            echo "PATH_PREFIX=/$REPO/" >> "$GITHUB_ENV"
-          fi
+      # Ask Pages where the site is actually served: base_path is "" once a
+      # custom domain is set in repo Settings > Pages, "/<repo>" until then.
+      # (A CNAME file alone doesn't do this for Actions-based deploys.)
+      - id: pages
+        uses: actions/configure-pages@v5
       - run: npm run build
-      - uses: actions/configure-pages@v5
+        env:
+          PATH_PREFIX: ${{ steps.pages.outputs.base_path }}/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
