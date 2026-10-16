@@ -1,0 +1,31 @@
+---
+layout: base.njk
+title: Blog
+description: Worked examples of AI agents and automation in small and mid-sized businesses.
+permalink: /blog/
+---
+<section class="page-head">
+  <div class="wrap">
+    <h1>Blog</h1>
+    <p>Worked examples of AI agents in real businesses: the problem, what we'd build, and what it takes.</p>
+  </div>
+</section>
+<section class="blog-list">
+  <div class="wrap">
+    {% if collections.posts.length %}
+    <ul class="post-list">
+      {% for post in collections.posts %}
+      <li>
+        <a href="{{ post.url }}">
+          <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+          <h3>{{ post.data.title }}</h3>
+          <p>{{ post.data.excerpt }}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>New use-case write-ups are on the way.</p>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agentx-labs.com/sitemap.xml

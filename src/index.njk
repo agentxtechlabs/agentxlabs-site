@@ -1,0 +1,197 @@
+---
+layout: base.njk
+permalink: /
+---
+{% set bookHref = site.booking_url or ("mailto:" + site.email + "?subject=Intro%20call%20with%20agentx%20labs") %}
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>AI agents that take the busywork off your team.</h1>
+      <p class="lede">We design and build custom AI agents and automations for small and mid-sized businesses. We start with one workflow that eats hours every week, ship it in weeks, and hand you the keys.</p>
+      <div class="actions">
+        <a class="btn" href="{{ bookHref }}">Book a free 30-minute call</a>
+        <a class="btn btn-ghost" href="#use-cases">See what we build</a>
+      </div>
+    </div>
+
+    <figure class="agent" aria-label="Example: an AI agent processing supplier invoices">
+      <div class="agent-head">
+        <span class="agent-dot" aria-hidden="true"></span>
+        <div>
+          <p class="agent-name">Supplier invoice agent</p>
+          <p class="agent-sub">Example run, Monday 08:02</p>
+        </div>
+        <span class="agent-status" data-status>Working</span>
+      </div>
+      <ol class="agent-steps">
+        <li><strong>Read the invoices inbox.</strong> 14 new emails, 6 with invoices attached.</li>
+        <li><strong>Pull out the details.</strong> Supplier, amount, VAT and due date from each PDF.</li>
+        <li><strong>Match to purchase orders.</strong> 5 match. 1 is billed €240 above the agreed price.</li>
+        <li><strong>Update the accounts sheet.</strong> 5 invoices logged and scheduled for payment.</li>
+        <li class="agent-ask"><strong>Draft a query to the supplier.</strong> Waiting for your OK before sending.</li>
+      </ol>
+      <figcaption class="agent-foot">Done in under a minute. It used to take someone most of Monday morning.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we do</h2>
+      <p>Practical AI that fits the tools you already use: your inbox, spreadsheets, CRM, accounting software and WhatsApp.</p>
+    </div>
+
+    <div class="services">
+      <article class="service service-lead">
+        <h3>Start here: the AI opportunity sprint</h3>
+        <p>In one to two weeks we sit with your team, map where time actually goes, and rank the workflows where AI pays back fastest. You get a clear plan with costs, risks and expected hours saved, whether or not you build with us.</p>
+        <a class="link" href="{{ bookHref }}">Ask about a sprint</a>
+      </article>
+      <article class="service">
+        <h3>AI agents and workflow automation</h3>
+        <p>Agents that read emails and documents, update your CRM or ERP, chase follow-ups and flag exceptions for a human to decide.</p>
+      </article>
+      <article class="service">
+        <h3>Document and data extraction</h3>
+        <p>Invoices, contracts, leases, forms and scanned paperwork turned into clean, structured data your systems can use.</p>
+      </article>
+      <article class="service">
+        <h3>Customer assistants</h3>
+        <p>Website and WhatsApp assistants that answer from your own documents, book appointments, and hand off to a person when it matters.</p>
+      </article>
+      <article class="service">
+        <h3>AI-native internal tools</h3>
+        <p>Lightweight apps and dashboards that replace spreadsheet tracking, with AI built in to summarise, forecast and spot problems early.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="use-cases">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Use cases by industry</h2>
+      <p>The busywork looks different in every business. Here's the kind of work we hand to agents.</p>
+    </div>
+
+    <div class="cases" role="table" aria-label="Use cases by industry">
+      <div class="case case-labels" role="row">
+        <span role="columnheader">Industry</span>
+        <span role="columnheader">The busywork</span>
+        <span role="columnheader">What the agent does</span>
+      </div>
+      <div class="case" role="row">
+        <h3 role="rowheader">Retail and e-commerce</h3>
+        <p role="cell">Staff answer the same “where's my order?” and returns questions all day.</p>
+        <p role="cell">A support assistant checks live order data, handles routine requests and passes edge cases to your team with the full context.</p>
+      </div>
+      <div class="case" role="row">
+        <h3 role="rowheader">Accounting, legal and agencies</h3>
+        <p role="cell">Chasing clients for documents, then retyping what's in them.</p>
+        <p role="cell">An intake agent requests what's missing, reads what arrives and prepares a first draft for review.</p>
+      </div>
+      <div class="case" role="row">
+        <h3 role="rowheader">Manufacturing</h3>
+        <p role="cell">Production status lives in spreadsheets and someone's head.</p>
+        <p role="cell">A daily exception report reads your order and shop-floor data and tells managers what is late, short or at risk.</p>
+      </div>
+      <div class="case" role="row">
+        <h3 role="rowheader">Clinics and practices</h3>
+        <p role="cell">Front-desk time goes on booking, reminders and paperwork.</p>
+        <p role="cell">A booking assistant manages appointments and reminders, and visit notes are drafted for the clinician to approve.</p>
+      </div>
+      <div class="case" role="row">
+        <h3 role="rowheader">Real estate and property</h3>
+        <p role="cell">Key dates are buried in dozens of lease PDFs.</p>
+        <p role="cell">An extraction agent builds a searchable lease register and reminds you before renewals, rent reviews and break dates.</p>
+      </div>
+      <div class="case" role="row">
+        <h3 role="rowheader">Logistics and distribution</h3>
+        <p role="cell">Customers call and email for shipment updates.</p>
+        <p role="cell">A tracking agent sends proactive updates, spots delays early and drafts the customer message.</p>
+      </div>
+    </div>
+    <p class="cases-more">Read worked examples on <a href="/blog/">the blog</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How we work</h2>
+      <p>Small, fixed-price steps. You see working software early and decide what comes next.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Discovery call</h3>
+        <p class="step-time">30 minutes, free</p>
+        <p>You tell us where the hours go. We tell you honestly whether AI is the right fix.</p>
+      </li>
+      <li>
+        <h3>Opportunity sprint</h3>
+        <p class="step-time">1 to 2 weeks</p>
+        <p>We map the workflow, pick the best first target and agree what success looks like.</p>
+      </li>
+      <li>
+        <h3>Pilot build</h3>
+        <p class="step-time">2 to 4 weeks</p>
+        <p>A working agent on your real data, with your team using it and giving feedback.</p>
+      </li>
+      <li>
+        <h3>Launch and improve</h3>
+        <p class="step-time">Ongoing</p>
+        <p>We monitor results, train your team and extend to the next workflow when it makes sense.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-ink">
+  <div class="wrap principles">
+    <h2>What you can count on</h2>
+    <ul>
+      <li><h3>Plain language</h3><p>No jargon, no black boxes. You'll understand what we built and why.</p></li>
+      <li><h3>You own it</h3><p>Code, data and prompts live in your accounts. No lock-in.</p></li>
+      <li><h3>People stay in charge</h3><p>Agents ask before anything that costs money or reaches a customer.</p></li>
+      <li><h3>Privacy first</h3><p>Your data is used for your work only, and never to train public models.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="blog">
+  <div class="wrap">
+    <div class="section-head section-head-row">
+      <h2>From the blog</h2>
+      <a class="link" href="/blog/">All posts</a>
+    </div>
+    {% set latest = collections.posts | limit(3) %}
+    {% if latest.length %}
+    <ul class="post-list">
+      {% for post in latest %}
+      <li>
+        <a href="{{ post.url }}">
+          <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+          <h3>{{ post.data.title }}</h3>
+          <p>{{ post.data.excerpt }}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>New use-case write-ups are on the way.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section cta" id="contact">
+  <div class="wrap cta-inner">
+    <h2>What task eats your team's week?</h2>
+    <p>Tell us about it in a few lines. We'll reply within one working day with an honest take on whether an agent can help.</p>
+    <div class="actions">
+      <a class="btn btn-sun" href="{{ bookHref }}">Book a free 30-minute call</a>
+      <a class="btn btn-ghost-light" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+  </div>
+</section>

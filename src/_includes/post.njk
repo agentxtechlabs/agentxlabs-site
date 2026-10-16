@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+{% set bookHref = site.booking_url or ("mailto:" + site.email + "?subject=Intro%20call%20with%20agentx%20labs") %}
+<article class="article">
+  <div class="wrap">
+    <div class="article-inner">
+      <a class="back" href="/blog/">All posts</a>
+      <h1>{{ title }}</h1>
+      {% if excerpt %}<p class="lede">{{ excerpt }}</p>{% endif %}
+      <p class="article-meta">
+        <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>, {{ content | readingTime }}{% if industry %}, {{ industry }}{% endif %}
+      </p>
+      <div class="prose">
+        {{ content | safe }}
+      </div>
+      <aside class="article-cta">
+        <h2>Have a workflow like this?</h2>
+        <p>Tell us about it on a free 30-minute call. We'll tell you honestly whether an agent can help.</p>
+        <a class="btn" href="{{ bookHref }}">Book a free call</a>
+      </aside>
+    </div>
+  </div>
+</article>

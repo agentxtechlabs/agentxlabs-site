@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js")</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% set pageTitle = (title + " | " + site.name) if title else site.title %}
+  {% set pageDesc = description or excerpt or site.description %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDesc }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="{{ 'article' if layout == 'post.njk' else 'website' }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#F2F5FA">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.name }} blog" href="/feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,750&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="/" aria-label="{{ site.name }} home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2647E8"/><path d="M10 10l12 12M22 10L10 22" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="16" r="3.2" fill="#FFC94D"/></svg>
+        <span>agentx<span class="brand-thin"> labs</span></span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="/#services">Services</a>
+        <a href="/#use-cases">Use cases</a>
+        <a href="/#process">How we work</a>
+        <a href="/blog/">Blog</a>
+        <a class="btn btn-small" href="/#contact">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <a class="brand brand-footer" href="/">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2647E8"/><path d="M10 10l12 12M22 10L10 22" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round"/><circle cx="16" cy="16" r="3.2" fill="#FFC94D"/></svg>
+          <span>agentx<span class="brand-thin"> labs</span></span>
+        </a>
+        <p class="footer-note">Custom AI agents and automation for small and mid-sized businesses.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#use-cases">Use cases</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        {% if site.linkedin_url %}<li><a href="{{ site.linkedin_url }}">LinkedIn</a></li>{% endif %}
+      </ul>
+    </div>
+    <div class="wrap footer-base">© {{ "" | year }} agentx labs</div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
